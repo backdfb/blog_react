@@ -22,14 +22,14 @@ const TitleText = styled.p`
     font-size: 20px;
     font-weight: 500;
 `;
-
 function PostListItem(props) {
-  const {post, onclick }= props;  
+  const { post, onPostClick } = props;
   return (
-    <Wrapper onclick={onclick}>
+    <Wrapper onClick={() => onPostClick(post.id)}>
         <TitleText>{post.title}</TitleText>
-    </Wrapper>         
-  )
+    </Wrapper>
+  );
 }
+
 
 export default PostListItem

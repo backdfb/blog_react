@@ -26,7 +26,6 @@ const Container = styled.div`
 `;
 
 function MainPage(props) {
-    const {} = props;
 
     const navigate = useNavigate();
 
@@ -42,8 +41,8 @@ function MainPage(props) {
 
                 <PostList 
                     posts={data}
-                    onClickItem={(item) => {
-                        navigate(`/post/${item.id}`);
+                    onClickItem={(id) => {
+                        navigate(`/post/${id}`);
                     }}
                 />
             </Container>

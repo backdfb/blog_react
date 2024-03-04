@@ -15,24 +15,10 @@ const Wrapper = styled.div`
     }
 `;
 
-function PostList(props) {
-    const { posts, onClickItem } = props;
-
-    return (
-        <Wrapper>
-            {posts.map((post, index) => {
-                return (
-                    <PostListItem 
-                        key={post.id}
-                        post={post}
-                        onClick={() => {
-                            onClickItem(post);
-                        }}
-                    />
-                );
-            })}
-        </Wrapper>
-    );
+function PostList({ posts, onClickItem }) {
+  return posts.map(post => (
+    <PostListItem key={post.id} post={post} onPostClick={onClickItem} />
+  ));
 }
 
 
